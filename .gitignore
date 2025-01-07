@@ -1,0 +1,22 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Django
+*.sqlite3
+*.log
+
+# Environnement virtuel
+.venv/
+
+# Configuration système
+Thumbs.db
+
+# Visual Studio Code
+.vscode/
+
+# Backup files
+*.swp
+*.bak
+*.tmp

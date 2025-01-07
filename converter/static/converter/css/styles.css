@@ -1,0 +1,160 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Permet de revenir à la ligne si nécessaire */
+    justify-content: space-between; /* Ajoute de l'espace entre les éléments */
+    align-items: center;
+    gap: 10px; /* Espace entre les éléments */
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #444;
+}
+
+form input[type="file"],
+form select {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 0.9rem;
+    transition: border 0.3s;
+}
+
+form input[type="file"]:focus,
+form select:focus {
+    border: 1px solid #6e8efb;
+    box-shadow: 0 0 4px rgba(110, 142, 251, 0.5);
+    outline: none;
+}
+
+form button {
+    flex: 1; /* Chaque bouton occupe l'espace disponible */
+    max-width: 48%; /* Limite la largeur à 48% pour deux boutons côte à côte */
+    background: #6e8efb;
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease; /* Animation pour les transitions de taille */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form button:hover {
+    background: #5a78e8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(90, 120, 232, 0.4);
+}
+
+form button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(110, 142, 251, 0.8);
+}
+
+form #convert-button {
+    flex-grow: 2; /* Double la taille initiale si seul */
+    max-width: 100%; /* Prend toute la largeur au départ */
+    transition: flex-grow 0.5s ease, max-width 0.5s ease; /* Transition pour les changements de taille */
+}
+
+form #convert-button.shrink {
+    flex-grow: 1; /* Rétrécit à moitié */
+    max-width: 48%; /* Partage la largeur avec l'autre bouton */
+}
+
+form #download-button {
+    flex-grow: 0; /* Initialement pas d'espace */
+    max-width: 0; /* Pas de largeur au départ */
+    overflow: hidden; /* Cache le contenu avant l'animation */
+    opacity: 0; /* Rendre invisible au départ */
+    display: none;
+    background: #28a745; /* Vert */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease; /* Animation fluide pour largeur et opacité */
+}
+
+form #download-button.visible {
+    display: inline-block;
+}
+
+form #download-button.increase {
+    flex-grow: 1; /* S'étend pour prendre la moitié de l'espace */
+    max-width: 48%; /* Prend sa place avec le bouton Convertir */
+    opacity: 1; /* Devient visible */
+}
+
+form #download-button:hover {
+    background: #218838; /* Vert foncé au survol */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 136, 56, 0.4);
+}
+
+/* Success and Error Messages */
+#conversion-result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#status-message {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

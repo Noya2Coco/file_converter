@@ -1,0 +1,32 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'converter/css/styles.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<h1>Convertisseur de fichiers</h1>
+
+<form id="upload-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="input_file">Choisir un fichier :</label>
+    <input type="file" name="input_file" id="input_file" required />
+
+    <label for="target_format">Format cible :</label>
+    <select name="target_format" id="target_format" required>
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+        <option value="jpg">JPG</option>
+        <option value="bmp">BMP</option>
+        <option value="tiff">TIFF</option>
+        <option value="gif">GIF</option>
+        <option value="webp">WEBP</option>
+        <option value="ico">ICO</option>
+        <option value="pdf">PDF</option>
+    </select>
+
+    <button id="convert-button" type="submit">Convertir</button>
+    <button id="download-button" type="button">Télécharger</button>
+</form>
+
+<script>
+    const uploadUrl = "{% url 'upload_file' %}";
+</script>
+<script type="text/javascript" src="{% static 'converter/js/converter.js' %}"></script>
