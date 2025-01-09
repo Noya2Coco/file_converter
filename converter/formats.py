@@ -1,0 +1,5 @@
+image_formats = ["png", "jpeg", "jpg", "bmp", "gif", "tiff", "webp", "ico"]
+writer_formats = ["docx", "odt", "txt"]
+table_formats = ["csv", "tsv", "xls", "xlsx"]
+slide_formats = ["pptx", "odp"]
+pdf_format = ["pdf"]
